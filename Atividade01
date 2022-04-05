@@ -1,0 +1,28 @@
+# Imagina-se que você é um dos programadores responsáveis pela construção de
+# app de vendas para uma determinada empresa X que vende em atacado.
+# Uma das estratégias de vendas dessa empresa X é dar desconto maiores por
+# unidade conforme a tabela abaixo:
+# 1. Entre com o valor unitário do produto (Lembrar que número decimal é feito com ponto e não vírgula
+# 2. Entre com a quantidade desse produto;
+# 3. O programa deve retornar o valor total sem desconto;
+# 4. O programa deve retornar o valor total após o desconto;
+
+# Questão 1 
+print('Bem vindo a loja da Gabriela Athayde Lubiana')   #Boas Vindas com identificação do Aluno
+valor = float(input('Digite o valor o produto em reais R$ ')) #Entrada do valor do produto
+quantidade = int(input('Digite a quantidade deste produto: ')) #Entrada da quantidade desse produto
+
+#Analise de desconto com base na quantidade de produtos
+if quantidade < 10:
+    vDesconto = valor * (quantidade)
+elif 10 <= quantidade <= 99:
+    vDesconto = valor * quantidade * 0.05   #desconto de 5%
+elif 100 <= quantidade <= 999:
+    vDesconto = valor * (quantidade*0.10)    #desconto de 10%
+else:
+    vDesconto = valor * (quantidade*0.15)   #desconto de 15% para quantidades acima de 1000
+
+total3859055 = quantidade * valor       #calcula o valor total sem desconto. | Identificador pessoal.
+print('Valor do desconto: R$ {:.2f}' . format(vDesconto ))      #Exibe o valor do desconto.
+print('Valor total sem desconto: R$ {:.2f}'. format(total3859055))    #Exibe o valor total dos produtos, sem o desconto.
+print ('Valor com desconto: R$ {:.2f}' . format (total3859055-vDesconto) ) #Exibe o valor final dos produtos, com desconto.
