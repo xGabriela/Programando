@@ -1,0 +1,27 @@
+# Imagina-se que você está desenvolvendo um software de controle de estudante para um colégio.
+# Este software deve ter o seguinte menu e opções:
+# 1. Cadastrar Estudante
+# 2. Consultar Estudantes
+#     1) Consultar Todas Estudantes
+#     2) Consulta Estudantes por RU
+#     3) Consulta Estudantes por Turma
+#     4) Retornar
+# 3. Remover Estudante
+# 4. Sair
+# Elabore um programa em Python que:
+# 1. Deve-se codificar uma função cadastrarEstudante(código)(EXIGÊNCIA 1);
+#     o Essa função recebe como parâmetro um código exclusivo para cada estudante cadastrado(DICA: utilize um contador como parâmetro)
+#     o Dentro da função perguntar o nome da Estudante;
+#     o Dentro da função perguntar a turma da Estudante;
+#     o Dentro da função perguntar o valor da Estudante
+#     o Cada Estudante cadastrada deve ter os seus dados armazenados num DICIONÁRIO
+#     (DICA: Conferir material escrito da p. 22 até p24 da AULA 06)
+# 2. Deve-se codificar uma função consultarEstudante(EXIGÊNCIA 2);
+#     o Dentro da função ter um menu com as seguintes opções:
+#         - Consultar Todas as Estudantes
+#         - Consultar Estudantes por RU
+#         - Consultar Estudantes por Turma
+#         - Retornar
+# 3. Deve-se codificar uma função chamada removerEstudante(EXIGÊNCIA 3);
+#     o Dentro da função perguntar qual o código do estudante que se deseja remover do cadastro(da lista de dicionário)
+

@@ -1,0 +1,17 @@
+from re import sub
+
+
+print("Bem vindo")
+vProduto = float(input('Entre com valor do produto: '))
+qtdProduto = int(input('ENtre com a quantidade: '))
+subtotal = vProduto * qtdProduto
+if subtotal < 200:
+    vFinal = subtotal
+elif 200 <= subtotal < 400:
+    vFinal = subtotal - subtotal * 0.04
+elif 400 <= subtotal < 700:
+    vFinal = subtotal - subtotal * 0.07
+else:
+    vFinal = subtotal- subtotal * 0.10
+print('Valor sem desconto: R$ {:.2f}'. format(subtotal))
+print('Valor com desconto: R$ {:.2f}'. format(vFinal))

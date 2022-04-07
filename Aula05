@@ -1,0 +1,110 @@
+'''
+def realce ():
+    print('|', '_' * 10,'|')
+    print('|', '_' * 10,'|')
+    
+    realce()
+    print('          MENU')
+    realce()
+
+
+def sub2 (x,y):
+    res = x-y
+    print(res)
+    
+sub(5,7)
+
+def soma3 (x = 0, y = 0, z = 0):
+    res = x + y + z 
+    print (res)
+
+def borda(s1):
+    tam = len (s1)
+    
+    if tam:
+        print('+', '-' * tam, '+')
+        print('|',s1,'|')
+        print('+', '-' * tam, '+')
+
+def soma3 (x = 0, y = 0, z = 0):
+    res = x + y + z 
+    return res
+retorno = soma3(1,2,3)
+print(retorno)
+
+'''
+# while True:
+#     try:
+#         x = int(input('Por favor digite um número: '))
+#         break
+#     except ValueError:
+#         print('Oops! Número inválido. Tente novamente...')
+        
+
+
+#erros de excessão
+def div():
+    try:
+        num1 = int(input('Digite um número: '))
+        num2 = int(input('Digite um número: '))
+        res = num1 / num2
+    except ZeroDivisionError:
+        print('ops! Erro de divisão por zero')
+    except:
+        print('Algo de errado não está certo')
+    else:
+        return res
+    finally:            #sempre vai executar
+        print('Executará sempre!')
+print(div())
+
+
+#função como parêmetro de função
+def imprime_condi(num, fcond):
+    if fcond(num):
+        print(num)
+    
+def par(x):
+    return x % 2 ==0
+def impar(x):
+    return not par(x)
+
+imprime_condi (5,par)
+
+
+#lambda parametro : calculo
+res = lambda x: x * x
+print(res(3))
+
+#retorno de valores 
+#função =! procedimentos 
+
+def soma3(x = 0, y=0, z=0):
+    res = x +y+z
+    return res
+
+#verifica parametros
+def valida_stg(pergunta, min, max):
+    s1 = input(pergunta)
+    tam = len(s1)
+    while ((tam < min) or (tam > max)):
+        s1 = input (pergunta)
+        tam =len(s1)
+    return
+
+x = valida_stg("Digite uma string ", 10,30)
+print('Vc digitou: {}. \n Dado válido. Encerrando o programa...' .format(x))
+
+
+def valida_stg(frase, min, max):
+    tam = len(frase)
+    if ((tam < min) or (tam > max)):
+        return False #avalia como falso, quem não atende o tamanho
+    else:
+        return True
+
+frase = input("Digite uma string ")
+while not valida_stg(frase,15,30):
+    frase = input('Digite uma frase de 15 a 30 caract: ')
+print(frase)
+

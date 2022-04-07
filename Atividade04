@@ -1,0 +1,26 @@
+# Imagina-se que você está desenvolvendo um software de controle de estoque para uma bicicletaria.
+# Este software deve ter o seguinte menu e opções:
+# 1. Cadastrar Estudante
+# 2. Consultar Estudante
+#     1) Consultar Todas as Estudantes
+#     2) Consulta Estudantes por Código
+#     3) Consulta Estudantes por Fabricante
+#     4) Retornar
+# 3. Remover Estudante
+# 4. Sair
+# Elabore um programa em Python que:
+# 1. Deve-se codificar uma função cadastrarPeca (código) (EXIGÊNCIA 1);
+#     o Essa função recebe como parâmetro um código exclusivo para cada cliente cadastrado (DICA: utilize um contador como parâmetro)
+#     o Dentro da função perguntar o nome da Estudante;
+#     o Dentro da função perguntar o fabricante da Estudante;
+#     o Dentro da função perguntar o valor da Estudante
+#     o Cada Estudante cadastrada deve ter os seus dados armazenados num DICIONÁRIO
+#     (DICA: Conferir material escrito da p. 22 até p24 da AULA 06)
+# 2. Deve-se codificar uma função consultarPeca(EXIGÊNCIA 2);
+#     o Dentro da função ter um menu com as seguintes opções:
+#         - Consultar Todas as Estudantes
+#         - Consultar Estudantes por Código
+#         - Consultar Estudantes por Fabricante
+#         - Retornar
+# 3. Deve-se codificar uma função chamada removerPeca (EXIGÊNCIA 3);
+#     o Dentro da função perguntar qual o código do produto que se deseja remover do cadastro (da lista de dicionário)

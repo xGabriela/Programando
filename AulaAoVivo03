@@ -1,0 +1,98 @@
+# Imagina-se que você e sua equipe foram contratados por petshop que
+# acabou de entrar no ramo. Esse petshop oferece os serviços de banho
+# e de tosa para cachorros com a seguinte politica de preço:
+# total = serviço * preco * pelo
+# Em que cada uma dsa variaveis é quantizada da seguinte maneira:
+# Qaudro 1: Dimensões versus Valor    Quadro 2: Peso versus multiplicador
+#  Serviço (cm³)     valor R$         peso kg         multiplicador
+# BA -Banho             10            peso <= 10           1.5
+# TO -Tosa              20            10 < peso <= 20      2
+# BT - Banho & Tosa     30            20 < peso <= 30      2.5
+#                                     30 < peso <= 40      3
+#                                     peso > 40       Não é aceito
+# Quadro 3: Rota versus multiplicador
+# Tipo De pleo    multiplicador
+# C - Curto          1.5
+# M - Médio          2.0
+# L - Longo          2.5
+
+
+# ----Começo da função servicocao-----
+from ast import Try
+
+def servicoCao():
+    while True:
+        servicoC = input(
+            'Escolha o serviço:\n BA -Banho \nTO -Tosa \nBT - Banho & Tosa\n ')
+        if servicoC == 'BA':
+            return 10.00
+        elif servicoC == 'TO':
+            return 20.00
+        elif servicoC == 'BT':
+            return 25.00
+        else:
+            print('Tente de novo')
+            continue
+
+# ------ Fim da Função servicoCao-----
+# ------- Começo da função pesoCao-----
+
+
+def pesoCao():
+    while True:
+        try:
+            pesoC = float(input('Entre com o peso do cachorro: '))
+            if pesoC <= 10:
+                return 1.5
+            elif 10 < pesoC <= 20:
+                return 2.0
+            elif 20 < pesoC <= 30:
+                return 2.5
+            elif 30 < pesoC <= 40:
+                return 3.0
+            elif pesoC > 40:
+                print('Peso não aceito')
+                continue
+            else:
+                print('Tente de novo')
+        except ValueError:
+            print('Valor não numerico')
+            continue
+
+# ----------Fim da Função pesoCao-----
+# ------- Começo da função peloCao ----
+
+
+def peloCao():
+    while True:
+        peloC = input(
+            'Escolha o tipo de pelo:\n C - Curto  \nM - Médio \nL - Longo\n ')
+        if peloC == 'C':
+            return 1.5
+        elif peloC == 'M':
+            return 2
+        elif peloC == 'L':
+            return 2.5
+        else:
+            print('Tente de novo')
+            continue
+
+
+# ----------Fim da Função peloCao ----
+# -----------------Começo da Main ----
+print('Bem vindo ao PetShop da Gabriela')
+servico = servicoCao()
+peso = pesoCao()
+pelo = peloCao()
+total = servico*peso*pelo
+
+
+print('Valor total foi de: R$ {:.2f} '.format(total))
+# --------------------Fim da Main-----
+
+
+# azul = '\033[4;36m'
+# fim = '\033[m'
+# a = 'Olá senhores'
+
+# print('Os valores são {}{}{}'.format(azul, a, fim))

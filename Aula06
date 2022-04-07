@@ -1,0 +1,157 @@
+# Aula Teórica - Tuplas(), listas[], dicionários{} e strings
+# Tupla - estática, imutável,
+# mochila = ('Machado', 'camisa', 'bacon', 'abacate')
+# print(mochila)
+# print(mochila[0])
+# print(mochila[2])   
+# print(mochila[0:2]) #do 0 até ultimo -1
+# print(mochila[2:])  #apartil do indice
+# print(mochila[-1]) #ultimo elemento
+
+# mochila[2] = 'Ovos' #erro
+
+# for item in mochila:
+#     print('Na mochila {}'.format(item))
+
+# upgrade = ('Queijo','canivete', 'camisa')
+# mochila_grande = mochila + upgrade
+# print(mochila_grande)
+
+# tupla em função
+# def soma(*num):
+#     soma = 0
+#     print('Tupla: {}'.format(num))
+#     for i in num:
+#         soma += i
+#     return soma
+
+# print('Resultado: {}\n'.format(soma(1,2)))
+# print('Resultado: {}\n'.format(soma(1,2,3,4,5,6,7,8,9)))
+
+
+# # -----  - LISTAS[] --- dinamica
+# mochila = ('Machado', 'camisa', 'bacon', 'abacate')
+# print('Tupla: ',mochila)
+# mochila = ['Machado', 'camisa', 'bacon', 'abacate']
+# print('Lista: ', mochila)
+# mochila[2] = 'Laranja'
+# print('Lista: ', mochila)
+
+# mochila.append('Ovos') #inserir um indice no final
+# print('Lista: ', mochila)
+# mochila.insert(1,'Canivete')  # inserir um indice no local desejado
+# print('Lista: ', mochila)
+# del mochila[1]      #remove pelo indice da lista
+# print('Lista: ',mochila)
+# mochila.remove('Ovos')  #remove pelo valor
+# print('Lista: ', mochila)
+
+# #cópia separada
+# x = [5,7,9,11]
+# y = x [:]   
+
+
+## Strings e listas 
+# mochila = ['Machado', 'camisa', 'bacon', 'abacate']
+# mochila[0][0]   #retorna a letra M
+
+# for item in mochila:
+#     for letra in item:
+#         print(letra, end='')
+#     print()
+
+# # lista dentro da lista
+# mochila = [['cebola',0.39],['tomate',0.49],['maçã',0.89]]
+# mochila[0][0] #retorna cebola
+# mochila[2][1] #retorna 0.89
+
+
+# item = []
+# mercado = []
+
+# for i in range(3):
+#     item.append(input('Digite o nome do item: '))
+#     item.append(int(input('Digite a quantidade: ')))
+#     item.append(float(input('Digite o valor: ')))
+#     mercado.append(item[:])
+#     item.clear()
+# print(mercado)
+
+# #outro jeito
+# mercado = []
+
+# for i in range(3):
+#     nome = input('Digite o nome do item: ')
+#     qtd = int(input('Digite a quantidade: '))
+#     valor = float(input('Digite o valor: '))
+#     mercado.append([nome,qtd,valor])
+# print(mercado)
+
+
+
+
+# ## Dicionário {} palavras - chaves
+# game = {'nome': 'Super Mario', 'desenvolvedora':'Nintendo','ano':1990 }
+# print(game)
+# print(game['nome']) #imprime o dado do indice nome
+
+# # métodos para dicionários - values (dado) - keys (chave) - items(chave:dado)
+# print(game.values())    #feio
+# for i in game.keys():
+#     print(i)
+     
+# for i,j in game.items():
+#     print('{} = {}'.format(i,j))
+
+# lista com dicionário
+# games = []
+# game1 = {'nome': 'Super Mario', 'videogame': 'Nintendo', 'ano': 1990}
+# game2 = {'nome': 'Zelda of Tima', 'videogame': 'Nintendo 64', 'ano': 1998}
+# game3 = {'nome': 'Pokemon', 'videogame': 'Game Boy', 'ano': 1999}
+# games = [game1,game2,game3]
+# print(games)
+
+# game = {}
+# games = []
+# for i in range(3):
+#     game ['nome'] = input('Qual o nome do jogo?')
+#     game['videogame'] = input('Qual videogame:')
+#     game ['ano'] = input('qual ano?')
+#     games.append(game.copy())
+# print('-'* 20)
+# for e in games:
+#     for i,j in e.items():
+#         print('{} = {}'.format(i,j))
+
+
+# Dicionários com listas 
+# games = {'nome': ['Mario','Zelda','Pokemon'],
+#         'videogame': ['nintendo','SNES 64', 'GB'],
+#         'ano': [1990,1998,1990]}
+# print(games)
+
+# games = {'nome':[], 'videogame':[], 'ano':[]}
+# for i in range(3):
+#     nome = input('Qual nome ')
+#     videogame = input('Qual video game ')
+#     ano = input('Qual ano ')
+#     games['nome'].append(nome)
+#     games['videogame'].append(videogame)
+#     games['ano'].append(ano)
+# print('-'*20)
+# print(games)
+
+# #### Strings
+# s1 = list('Algoritmos')
+# print(s1)   #print separado 
+# print(''.join(s1))  #print agrupado
+s1 = 'Lógica de Programação e Algoritmos'
+print(s1.lower().endswith('algoritmos'))
+print(s1.upper())   #tudo mausculo
+print(s1.lower())   #tudo minusculo
+print(s1.count('a'))    #contador de padrão
+print(s1.split(' ')) # quebra nos espaços
+print(s1.replace('Lógica', 'Atividade')) #substitui a palavra
+print(s1.replace('Lógica', 'Atividade',1)) #substitui a palavra uma vez
+
+###### Validação de dados
