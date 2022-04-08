@@ -29,7 +29,7 @@
 listaPecas = []
 # ----------------COMEÇO cadastrarPeca --------
 def cadastrarPeca(cod):          #EXIGÊNCIA 1
-    print('Bem vindo ao Cadastrar estudantes ')
+    print('Bem vindo ao Cadastrar Peças ')
     print('O código da peça a ser cadastrada é: {}'.format(cod))
     nome = input('Digite o nome da peça: ')
     fabricante = input('Digite o fabricante da peça: ')
@@ -66,9 +66,9 @@ def consultarPeca():
 
             elif opConsultar == 3:
                 print('Bem vindo a Consultar peças por fabriecante ')
-                entrada = input('Digite a Turma: ')
+                entrada = input('Digite o fabricante: ')
                 for peca in listaPecas:  # selecionar cada dicionário da minha lista
-                    if(peca['turma'] == entrada):
+                    if(peca['fabricante'] == entrada):
                         for key, value in peca.items():
                             print("{}:{}".format(key, value))
 
