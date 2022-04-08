@@ -96,7 +96,7 @@ def removerPeca():
 
 
 print('Bem vindo ao Controle de estoque da Gabriela Athayde Lubiana ')
-codigo = 000
+codigo = 0
 while True:
     try:
         opcao = int(input('Digite a opção  desejada: \n'
