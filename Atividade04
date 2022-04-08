@@ -1,26 +1,124 @@
 # Imagina-se que você está desenvolvendo um software de controle de estoque para uma bicicletaria.
 # Este software deve ter o seguinte menu e opções:
-# 1. Cadastrar Estudante
-# 2. Consultar Estudante
-#     1) Consultar Todas as Estudantes
-#     2) Consulta Estudantes por Código
-#     3) Consulta Estudantes por Fabricante
+# 1. Cadastrar Peça
+# 2. Consultar Peça
+#     1) Consultar Todas as Peças
+#     2) Consulta Peças por Código
+#     3) Consulta Peças por Fabricante
 #     4) Retornar
-# 3. Remover Estudante
+# 3. Remover Peça
 # 4. Sair
 # Elabore um programa em Python que:
 # 1. Deve-se codificar uma função cadastrarPeca (código) (EXIGÊNCIA 1);
 #     o Essa função recebe como parâmetro um código exclusivo para cada cliente cadastrado (DICA: utilize um contador como parâmetro)
-#     o Dentro da função perguntar o nome da Estudante;
-#     o Dentro da função perguntar o fabricante da Estudante;
-#     o Dentro da função perguntar o valor da Estudante
-#     o Cada Estudante cadastrada deve ter os seus dados armazenados num DICIONÁRIO
+#     o Dentro da função perguntar o nome da Peça;
+#     o Dentro da função perguntar o fabricante da Peça;
+#     o Dentro da função perguntar o valor da Peça
+#     o Cada Peça cadastrada deve ter os seus dados armazenados num DICIONÁRIO
 #     (DICA: Conferir material escrito da p. 22 até p24 da AULA 06)
 # 2. Deve-se codificar uma função consultarPeca(EXIGÊNCIA 2);
 #     o Dentro da função ter um menu com as seguintes opções:
-#         - Consultar Todas as Estudantes
-#         - Consultar Estudantes por Código
-#         - Consultar Estudantes por Fabricante
+#         - Consultar Todas as Peças
+#         - Consultar Peças por Código
+#         - Consultar Peças por Fabricante
 #         - Retornar
 # 3. Deve-se codificar uma função chamada removerPeca (EXIGÊNCIA 3);
 #     o Dentro da função perguntar qual o código do produto que se deseja remover do cadastro (da lista de dicionário)
+
+
+listaPecas = []
+# ----------------COMEÇO cadastrarPeca --------
+def cadastrarPeca(cod):          #EXIGÊNCIA 1
+    print('Bem vindo ao Cadastrar estudantes ')
+    print('O código da peça a ser cadastrada é: {}'.format(cod))
+    nome = input('Digite o nome da peça: ')
+    fabricante = input('Digite o fabricante da peça: ')
+    valor = float(input('Digite o valor da peça: '))
+    dicionarioPeca = {'cod': cod,
+                    'nome': nome,
+                    'fabricante': fabricante,
+                    'valor': valor}
+    listaPecas.append(dicionarioPeca.copy())
+# -------------------FIM cadastrarPeca --------
+# ----------------COMEÇO consultarPeca --------
+
+def consultarPeca():
+    while True:
+        try:
+            print('Bem vindo ao Consultar Peças ')
+            opConsultar = int(input('Opção desejada\n'
+                                    '1- Consultar todas as peças\n'
+                                    '2- Consultar peças por código\n'
+                                    '3- Consultar peças por Fabricante\n'
+                                    '4- Retornar\n--'))
+            if opConsultar == 1:
+                print('Bem vindo a Consultar todas as peças ')
+                for peca in listaPecas:  # selecionar cada dicionário da minha lista
+                    for key, value in peca.items():  # seleciona cada conjunto do dicionário
+                        print("{}:{}".format(key, value))
+            elif opConsultar == 2:
+                print('Bem vindo a Consultar peças por código ')
+                entrada = int(input('Digite o código: '))
+                for peca in listaPecas:  # selecionar cada dicionário da minha lista
+                    if(peca['cod'] == entrada):
+                        for key, value in peca.items():
+                            print("{}:{}".format(key, value))
+
+            elif opConsultar == 3:
+                print('Bem vindo a Consultar peças por fabriecante ')
+                entrada = input('Digite a Turma: ')
+                for peca in listaPecas:  # selecionar cada dicionário da minha lista
+                    if(peca['turma'] == entrada):
+                        for key, value in peca.items():
+                            print("{}:{}".format(key, value))
+
+            elif opConsultar == 4:
+                print('Retornando ao menu principal...')
+                return
+            else:
+                print('Este número não existe no menu..')
+                continue
+        except ValueError:
+            print('Valor não inteiro. Tente novamente.')
+
+# -------------------FIM consultarPeca --------
+# ----------------COMEÇO removerPeca --------
+
+
+def removerPeca():
+    print('Bem vindo ao Remover Peças ')
+    entrada = int(input('Digite o código a ser removido: '))
+    for peca in listaPecas:  # selecionar cada dicionário da minha lista
+        if(peca['cod'] == entrada):
+           listaPecas.remove(peca)
+# -------------------FIM removerPeca --------
+# ----------------COMEÇO PROGRAMA PRINCIPAL --------
+
+
+print('Bem vindo ao Controle de estoque da Gabriela Athayde Lubiana ')
+codigo = 000
+while True:
+    try:
+        opcao = int(input('Digite a opção  desejada: \n'
+                        '1- Cadastrar peça\n'
+                        '2- Consultar peça\n'
+                        '3- Remover peça\n'
+                        '4- Sair \n--'))
+        if opcao == 1:
+            codigo = codigo + 1
+            cadastrarPeca(codigo)
+        elif opcao == 2:
+            consultarPeca()
+        elif opcao == 3:
+            removerPeca()
+        elif opcao == 4:
+            print('Programa encerrado...')
+            break
+        else:
+            print('Parece digitar erro..')
+            continue
+    except ValueError:
+        print('Valor não inteiro. Tente novamente.')
+
+
+# -------------------FIM MAIN --------
