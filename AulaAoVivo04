@@ -25,3 +25,97 @@
 # 3. Deve-se codificar uma função chamada removerEstudante(EXIGÊNCIA 3);
 #     o Dentro da função perguntar qual o código do estudante que se deseja remover do cadastro(da lista de dicionário)
 
+listaEstudantes = []
+# ----------------COMEÇO cadastrarEstudante --------
+
+
+def cadastrarEstudante(ru):
+    print('Bem vindo ao Cadastrar estudantes ')
+    print('o RU do estudante a ser cadastrado é: {}'.format(ru))
+    nome = input('Digite o nome: ')
+    turma = input('Digite a turma: ')
+    dicEstudante = { 'ru' : ru,
+                    'nome' : nome,
+                    'turma' : turma}
+    listaEstudantes.append(dicEstudante.copy())
+# -------------------FIM cadastrarEstudante --------
+# ----------------COMEÇO consultarEstudante --------
+
+
+def consultarEstudante():
+    while True:
+        try:
+            print('Bem vindo ao Consultar estudantes ')
+            opConsultar = int(input('Opção desejada\n'
+                                    '1- Consultar todos estudante\n'
+                                    '2- Consultar por RU\n'
+                                    '3- Consultar por Turma\n'
+                                    '4- Retornar\n--'))
+            if opConsultar == 1:
+                print('Bem vindo a Consultar Todos ')
+                for estudante in listaEstudantes:   #selecionar cada dicionário da minha lista
+                    for key,value in estudante.items(): #seleciona cada conjunto do dicionário
+                        print("{}:{}".format(key,value))
+            elif opConsultar == 2:
+                print('Bem vindo a Consultar por RU ')
+                entrada = int(input('Dgitie a RU: '))
+                for estudante in listaEstudantes:  # selecionar cada dicionário da minha lista
+                    if(estudante['ru']==entrada):
+                        for key, value in estudante.items():  
+                            print("{}:{}".format(key, value))
+
+            elif opConsultar == 3:
+                print('Bem vindo a Consultar por Turma ')
+                entrada = input('Dgitie a Turma: ')
+                for estudante in listaEstudantes:  # selecionar cada dicionário da minha lista
+                    if(estudante['turma'] == entrada):
+                        for key, value in estudante.items():
+                            print("{}:{}".format(key, value))
+
+            elif opConsultar == 4:
+                print('Retornando ao menu principal...')
+                return
+            else:
+                print('Este número não existe no menu..')
+                continue
+        except ValueError:
+            print('Valor não inteiro. Tente novamente.')
+                
+# -------------------FIM consultarEstudante --------
+# ----------------COMEÇO removerEstudante --------
+
+
+def removerEstudante():
+    print('Bem vindo ao Remover estudantes ')
+    entrada = int(input('Dgitie o Ru a ser removido: '))
+    for estudante in listaEstudantes:  # selecionar cada dicionário da minha lista
+        if(estudante['ru'] == entrada):
+           listaEstudantes.remove(estudante)
+# -------------------FIM removerEstudante --------
+# ----------------COMEÇO MAIN --------
+
+
+print('Bem vindo ao Programa da Gabriela Athayde Lubiana ')
+registro = 0
+while True:
+    try:
+        opcao = int(input('Digite a opção  desejada: \n1- Cadastrar estudante\n2-Consultar estudante\n3- Remover estudante\n4- Sair '))
+        if opcao == 1:
+            registro = registro+ 1
+            cadastrarEstudante(registro)
+        elif opcao == 2:
+            consultarEstudante()
+        elif opcao == 3:
+            removerEstudante()
+        elif opcao == 4:
+            print('Programa encerrado...')
+            break
+        else:
+            print('Parece digitar erro..')
+            continue
+    except ValueError:
+        print('Valor não inteiro. Tente novamente.')
+        
+        
+
+# -------------------FIM MAIN --------
